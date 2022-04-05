@@ -14,7 +14,6 @@
   UefiApplicationEntryPoint|MdePkg/Library/UefiApplicationEntryPoint/UefiApplicationEntryPoint.inf
   ShellCEntryLib|ShellPkg/Library/UefiShellCEntryLib/UefiShellCEntryLib.inf
   UefiDriverEntryPoint|MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf
-  FvLib|StandaloneMmPkg/Library/FvLib/FvLib.inf
   #
   # Common Libraries
   #
@@ -53,5 +52,4 @@
   CacheMaintenanceLib|MdePkg/Library/BaseCacheMaintenanceLib/BaseCacheMaintenanceLib.inf
 
 [Components]
-
-DxeRootkitPkg/rootkit/rootkit.inf
+  DxeRootkitPkg/rootkit/rootkit.inf

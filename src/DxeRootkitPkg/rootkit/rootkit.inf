@@ -2,7 +2,7 @@
   INF_VERSION                    = 0x00010005
   BASE_NAME                      = Rootkit
   FILE_GUID                      = F7DB0ECE-2847-4C84-9B12-2A11A0CC530C # generated
-  MODULE_TYPE                    = DXE_RUNTIME_DRIVER
+  MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
   ENTRY_POINT                    = RootkitEntryPoint
 
@@ -12,43 +12,22 @@
 [Packages]
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
-  StandaloneMmPkg/StandaloneMmPkg.dec
+  DxeRootkitPkg/DxeRootkitPkg.dec
 
 [LibraryClasses]
-  SerialPortLib
-  UefiRuntimeLib
-  MemoryAllocationLib
-  UefiBootServicesTableLib
-  UefiRuntimeServicesTableLib
   UefiDriverEntryPoint
-  HobLib
-  PcdLib
-  PrintLib
-  ReportStatusCodeLib
-  DebugLib
+  UefiLib
+  UefiBootServicesTableLib
   BaseMemoryLib
-  FvLib
-  DebugAgentLib
+  BaseLib
 
 [Guids]
-  ## SOMETIMES_CONSUMES   ## HOB
-  ## SOMETIMES_PRODUCES   ## SystemTable
-  gMemoryStatusCodeRecordGuid
-  gEfiStatusCodeDataTypeStringGuid              ## SOMETIMES_CONSUMES   ## UNDEFINED
-  gEfiEventVirtualAddressChangeGuid             ## CONSUMES ## Event
-  gEfiEventExitBootServicesGuid                 ## CONSUMES ## Event
+  gEfiPayloadGuid
 
 [Protocols]
-  gEfiRscHandlerProtocolGuid                    ## CONSUMES
-
-[Pcd]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeReplayIn  ## CONSUMES
-  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeUseSerial ## CONSUMES
-  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeUseMemory ## CONSUMES
-  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeMemorySize |128| gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeUseMemory   ## SOMETIMES_CONSUMES
+  gEfiSimpleFileSystemProtocolGuid  # consumes
+  gEfiFirmwareVolume2ProtocolGuid   # consumes
 
 [Depex]
-  gEfiRscHandlerProtocolGuid
-
-[UserExtensions.TianoCore."ExtraFiles"]
-  StatusCodeHandlerRuntimeDxeExtra.uni
+  gEfiSimpleFileSystemProtocolGuid AND
+  gEfiFirmwareVolume2ProtocolGuid
