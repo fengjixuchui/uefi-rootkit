@@ -12,6 +12,7 @@
 #include <Protocol/SimpleFileSystem.h>
 
 extern EFI_GUID gEfiPayloadGuid;
+extern EFI_GUID gEfiNtfs3gGuid;
 
 EFI_STATUS LoadPayload(IN EFI_HANDLE image_handle, OUT void **buffer, OUT UINTN *size)
 {

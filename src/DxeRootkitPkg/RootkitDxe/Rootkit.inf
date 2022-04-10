@@ -1,6 +1,6 @@
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = Rootkit
+  BASE_NAME                      = RootkitDxe
   FILE_GUID                      = F7DB0ECE-2847-4C84-9B12-2A11A0CC530C # generated
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
@@ -13,6 +13,7 @@
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   DxeRootkitPkg/DxeRootkitPkg.dec
+  uefi-driver.dec
 
 [LibraryClasses]
   UefiDriverEntryPoint
@@ -30,4 +31,5 @@
 
 [Depex]
   gEfiSimpleFileSystemProtocolGuid AND
-  gEfiFirmwareVolume2ProtocolGuid
+  gEfiFirmwareVolume2ProtocolGuid AND
+  gEfiNtfs3gGuid

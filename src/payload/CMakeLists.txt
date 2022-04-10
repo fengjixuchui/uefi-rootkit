@@ -9,4 +9,4 @@ add_executable(payload WIN32 ${PROJECT_SOURCE_DIR}/main.cpp)
 
 target_link_options(payload PRIVATE -static)
 
-#add_custom_command(payload POST_BUILD COMMAND echo "Hel" ARGS $<TARGET_FILE>)
+set_target_properties(payload PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../DxeRootkitPkg/PayloadDxe)

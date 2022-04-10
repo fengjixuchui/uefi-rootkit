@@ -1,5 +1,5 @@
-ACTIVE_PLATFORM       = src/UefiExamplePkg/UefiExamplePkg.dsc
-TARGET                = DEBUG
+ACTIVE_PLATFORM       = deps/edk2/OvmfPkg/OvmfPkgX64.dsc
+TARGET                = RELEASE
 TARGET_ARCH           = X64
 TOOL_CHAIN_CONF       = Conf/tools_def.txt
 TOOL_CHAIN_TAG        = GCC5

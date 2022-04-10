@@ -1,10 +1,9 @@
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = Payload
+  BASE_NAME                      = PayloadDxe
   FILE_GUID                      = B139DF93-D5A4-4B5D-9CA8-011AADF42E85 # generated
   MODULE_TYPE                    = USER_DEFINED
   VERSION_STRING                 = 1.0
 
 [Binaries]
   BIN|payload.exe|*
-
