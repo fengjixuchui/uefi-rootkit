@@ -1,9 +1,6 @@
-[submodule "deps/vector-edk"]
-	path = deps/vector-edk
-	url = https://github.com/hackedteam/vector-edk.git
 [submodule "deps/ntfs-3g"]
 	path = deps/ntfs-3g
-	url = https://github.com/pbatard/ntfs-3g.git
+	url = https://github.com/powware/ntfs-3g
 [submodule "deps/UEFITool"]
 	path = deps/UEFITool
-	url = https://github.com/LongSoft/UEFITool.git
+	url = https://github.com/powware/UEFITool
