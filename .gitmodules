@@ -1,8 +1,12 @@
 [submodule "deps/ntfs-3g"]
 	path = deps/ntfs-3g
-	url = https://github.com/powware/ntfs-3g
+	url = https://github.com/powware/ntfs-3g.git
 	branch = uefi-rootkit
 [submodule "deps/UEFITool"]
 	path = deps/UEFITool
-	url = https://github.com/powware/UEFITool
+	url = https://github.com/powware/UEFITool.git
+	branch = uefi-rootkit
+[submodule "deps/edk2"]
+	path = deps/edk2
+	url = https://github.com/powware/edk2.git
 	branch = uefi-rootkit
