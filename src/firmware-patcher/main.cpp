@@ -6,9 +6,9 @@
 #include <iostream>
 #include <string>
 
-#include "../../deps/UEFITool/basetypes.h"
-#include "../../deps/UEFITool/ffs.h"
-#include "../../deps/UEFITool/ffsengine.h"
+#include <UEFITool/basetypes.h>
+#include <UEFITool/ffs.h>
+#include <UEFITool/ffsengine.h>
 
 int main(int argc, char *argv[])
 {
