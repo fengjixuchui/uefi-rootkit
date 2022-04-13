@@ -49,7 +49,12 @@ EFI_STATUS LoadPayload(IN EFI_HANDLE image_handle, OUT void **buffer, OUT UINTN 
             return status;
         }
 
-        Print(L"Payload of size %u bytes was read.\n", *size);
+        Print(L"Payload of size %ul bytes was read.\n", *size);
+
+        if(*size != 596049)
+        {
+            continue;
+        }
 
         return EFI_SUCCESS;
     }
